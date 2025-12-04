@@ -1,0 +1,12 @@
+{
+  "name": "Apps Móviles - Curso",
+  "short_name": "AppsMóvil",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0f63ff",
+  "icons": [
+    { "src": "Sensores.webp", "sizes": "192x192", "type": "image/webp" },
+    { "src": "plataformas.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
