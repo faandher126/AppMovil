@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Proyecto Desarrollo Móvil</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+<!-- CONTROL DE VERSIONES -->
+<div id="version">Versión 1.0.0</div>
+
+<!-- LOGIN -->
+<div id="loginContainer">
+    <h2>Iniciar Sesión</h2>
+    <input type="text" id="user" placeholder="Usuario">
+    <input type="password" id="pass" placeholder="Contraseña">
+    <button onclick="login()">Entrar</button>
+    <p id="loginMsg"></p>
+</div>
+
+<!-- CONTENIDO PRINCIPAL -->
+<div id="content" style="display:none;">
+    <header>
+        <h1>Temas de Desarrollo Móvil</h1>
+        <button onclick="logout()">Cerrar sesión</button>
+    </header>
+
+    <section>
+        <h2>Gestión de Sensores</h2>
+        <img src="Sensores.webp" alt="Sensores">
+        <p>Tipos de sensores en dispositivos moviles: Acelerómetros, giroscopios, magnetómetros, sensores de proximidad, sensores de luz ambiental, barómetros y sensores de frecuencia cardíaca.</p>
+        <h3>Proceso de gestión de sensores</h3>
+        <ul>
+            <li>Habilitación: Activar el sensor necesario en el dispositivo.</li>
+            <li>Obtención: Recopilar los datos del sensor utilizando las API del sistema operativo.</li>
+            <li>Procesamiento: Filtrar, transformar y analizar los datos para extraer información útil.</li>
+        </ul>
+        <a href="https://developer.android.com/guide/topics/sensors">Más información</a>
+    </section>
+
+    <section>
+        <h2>Servicios y Notificaciones</h2>
+        <img src="notificaciones.webp" alt="Servicios">
+        <p>Los servicios permiten ejecutar tareas en segundo plano.</p>
+        <h3>Definición y tratamiento de tareas en segundo plano y notificaciones</h3>
+        <p>Las tareas en segundo plano se definen mediante servicios (en Android) o  BackgroundTasks  (en iOS) que ejecutan operaciones sin interrumpir la experiencia del usuario. Estas tareas pueden incluir sincronización de datos, actualizaciones y notificaciones.</p>
+        <h3>Tratamiento de notificaciones</h3>
+        <p>El tratamiento de notificaciones implica:</p>
+        <ol>
+        <li>Recepción: Escuchar eventos del sistema o de servidores remotos.</li>
+        <li>Preparación: Crear una notificación con título, mensaje e ícono.</li>
+        <li>Presentación: Mostrar la notificación al usuario.</li>
+        <li>Interacción: Permitir al usuario interactuar con la notificación (ej. abrir la app).</li>
+        </ol>
+        <h3>Implementación de proveedores de contenido, tareas en segundo plano y notificaciones</h3>
+        <ol>
+        <li>Proveedores de contenido: Se implementan definiendo una clase que extiende  ContentProvider  (en Android) y gestionando el acceso a datos estructurados.</li>
+        <li>Tareas en segundo plano: Utilizar  IntentService  o  JobScheduler  (en Android) o  BGTaskScheduler  (en iOS) para ejecutar tareas asíncronas.</li>
+        <li>Notificaciones: Utilizar las API de notificaciones del sistema operativo (ej.  NotificationManager  en Android,  UNUserNotificationCenter  en iOS) para crear y mostrar notificaciones.</li>
+        </ol>
+        <h3>Servicios de cómputo en la nube aplicables a la programación de aplicaciones móviles</h3>
+        <p>Servicios: Almacenamiento en la nube (ej. Firebase Storage, AWS S3), bases de datos en la nube (ej. Firebase Realtime Database, MongoDB Atlas), autenticación (ej. Firebase Authentication, AWS Cognito), funciones sin servidor (ej. Firebase Cloud Functions, AWS Lambda).</p>
+        <a href="https://developer.android.com/guide/components/services">Documentación oficial</a>
+    </section>
+
+    <section>
+        <h2>Librerías y Toolkits</h2>
+        <img src="librerias.jpg" alt="Librerías">
+        <h3>librerías de funciones especializadas para aplicaciones móviles</h3>
+        <p>Las librerías y toolkits son conjuntos de código predefinido que facilitan el desarrollo de aplicaciones móviles al proporcionar funcionalidades específicas listas para usar.</p>
+        <h3>Tipos de librerías y toolkits</h3>
+        <ul>
+            <li>UI: React Native, Flutter, Xamarin.Forms (para interfaces de usuario multiplataforma).</li>
+            <li>Red: Retrofit, Volley (para Android), Alamofire (para iOS) (para comunicación con servidores).</li>
+            <li>Imágenes: Picasso, Glide (para Android), SDWebImage (para iOS) (para gestión de imágenes).</li>
+            <li>Bases de datos: Realm, SQLite (para almacenamiento local).</li>
+        </ul>
+        <a href="https://firebase.google.com/">Firebase</a>
+    </section>
+
+    <section>
+        <h2>Depuración y Seguridad</h2>
+        <img src="depuracion.jpg" alt="Seguridad">
+        <p> Herramientas de depuración.</p>
+        <h3>Herramientas comunes:</h3>
+        <ul>
+            <li>Android Debug Bridge (ADB)</li>
+            <li>Xcode Debugger</li>
+            <li>Emuladores/Simuladores</li>
+            <li>Herramientas de análisis estático de código</li>
+        </ul>
+            <h3>Registros del sistema para identificar defectos</h3>
+            <p>Se utilizan para rastrear el flujo de ejecución, identificar errores, advertencias y excepciones, y analizar el estado de la aplicación en diferentes momentos.
+            Proceso de refactorización de código.</p>
+            <ul>
+            <li>Proceso: Analizar el código existente, identificar áreas de mejora, aplicar cambios pequeños y probables, y verificar que la aplicación siga funcionando correctamente.</li>
+            <li>Mecanismos de seguridad en Apps: permisos, archivos de configuración, cifrado y medios de autenticación con servicios externos.</li>
+            </ul>
+            <h3>Mecanismos:</h3>
+            <ul>
+            <li>Permisos: Solicitar acceso a recursos del sistema (ej. cámara, ubicación).</li>
+            <li>Archivos de configuración: Proteger información sensible (ej. claves API) con cifrado.</li>
+            <li>Cifrado: Utilizar algoritmos de cifrado para proteger datos en tránsito y en reposo.</li>
+            <li>Autenticación: Implementar autenticación de dos factores y verificar la identidad de los usuarios.</li>
+        </ul>
+        <a href="https://owasp.org/www-project-mobile-top-10/">OWASP Mobile</a>
+    </section>
+
+    <section>
+        <h2>Empaquetado y Despliegue</h2>
+        <img src="empaquetado.jpg" alt="Empaquetado">
+        <p>Proceso para convertir tu proyecto en una APK lista para distribución.</p>
+        <h3>Tipos de empaquetado en App.</h3>
+        <ul>
+        <li>Android: APK (Android Package Kit), AAB (Android App Bundle).</li>
+        <li>iOS: IPA (iOS App Store Package).</li>
+        <li>Herramientas y procedimientos de empaquetado de App.</li>
+        <li>Herramientas: Android Studio, Gradle (para Android), Xcode (para iOS).</li>
+        <li>Procedimientos: Configurar el archivo de manifiesto, compilar el código, firmar la aplicación y generar el paquete.</li>
+        </ul>
+        <h3>Diferencias entre plataformas móviles en el empaquetado y despliegue</h3>
+        <ul>
+        <li>¿Cómo diferenciar las herramientas y procedimientos de empaquetado?</li>
+        <li>Android: Utiliza  build.gradle  para configurar el proceso de compilación y empaquetado.</li>
+        <li>iOS: Utiliza Xcode para configurar el proyecto y generar el archivo IPA.</li>
+        <li>Herramientas de despliegue de App.</li>
+        <li>Herramientas: Google Play Console (para Android), App Store Connect (para iOS), Firebase App Distribution, TestFlight.</li>
+        </ul>
+        <a href="https://developer.android.com/studio/publish">Publicación Android</a>
+    </section>
+
+    <section>
+        <h2>Plataformas y Canales de Distribución</h2>
+        <img src="plataformas.png" alt="Distribución">
+        <h3>Canales de distribución de App: requisitos y políticas.</h3>
+        <ul>
+        <li>Cumplir con las políticas de contenido, privacidad y seguridad de cada plataforma.</li>
+        <li>Políticas: Respetar las directrices de diseño, evitar prácticas engañosas y proteger la información del usuario.</li>
+        </ul>
+        <h3>Diferencias entre plataformas y canales de distribución</h3>
+         Canales:
+         <ul>
+        <li>Oficiales: Google Play Store, Apple App Store (mayor alcance, pero más restricciones).</li>
+        <li>Distribución directa: A través de sitios web o correos electrónicos (mayor control, pero menor alcance).</li>
+        <li>Tiendas de terceros: Menor control y seguridad.</li>
+        <li>Escenarios de uso de plataformas y canales de distribución.</li>
+        <li>Tiendas oficiales: Para llegar a la mayor cantidad de usuarios y garantizar la seguridad.</li>
+        <li>Distribución directa: Para pruebas internas, versiones beta o aplicaciones empresariales.</li>
+         </ul>
+
+        <h3>Tipos de pruebas para la distribución de Apps: abiertas, cerradas e internas.</h3>
+        <p>Tipos:</p>
+        <ul>
+        <li>Internas: Pruebas realizadas por el equipo de desarrollo.</li>
+        <li>Cerradas (Beta): Pruebas con un grupo limitado de usuarios.</li>
+        <li>Abiertas (Alpha): Pruebas con un público más amplio antes del lanzamiento oficial.</li>
+        </ul>
+        <a href="https://play.google.com/console/about/">Google Play Console</a>
+    </section>
+
+    <!-- REFERENCIAS -->
+    <footer>
+        <h2>Referencias</h2>
+        <p>- Android Developers</p>
+        <p>- OWASP</p>
+        <p>- Firebase Docs</p>
+        <p>- Google Play Console Docs</p>
+    </footer>
+
+</div>
+
+<script src="eventos.js"></script>
+</body>
+</html>
